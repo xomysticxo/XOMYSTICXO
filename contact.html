@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>XOMYSTICXO — Contact</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* CONTACT GRID */
+.contact-section{position:relative;padding:80px 40px;background:#000;overflow:hidden;}
+.contact-grid{max-width:960px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+
+/* FORM */
+.form-wrap h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);color:#fff;margin-bottom:10px;text-shadow:0 0 20px rgba(168,85,247,.4);}
+.form-wrap .sub{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:32px;}
+.form-group{margin-bottom:18px;}
+.form-label{font-family:var(--ft);font-size:10px;letter-spacing:.2em;color:var(--p300);margin-bottom:7px;display:block;}
+.form-input,.form-textarea,.form-select{width:100%;background:rgba(10,0,20,.85);border:1px solid var(--border);color:var(--text);font-family:var(--fb);font-size:14px;padding:13px 16px;outline:none;transition:border-color .25s;border-radius:0;}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--p400);box-shadow:0 0 16px rgba(168,85,247,.15);}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--text3);}
+.form-textarea{resize:vertical;min-height:130px;}
+.form-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238B75A0'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-color:rgba(10,0,20,.85);cursor:pointer;}
+.form-select option{background:#0d001f;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.submit-btn{width:100%;padding:16px;background:transparent;border:1px solid var(--p400);color:#fff;font-family:var(--ft);font-size:12px;letter-spacing:.22em;cursor:pointer;transition:all .3s;margin-top:8px;box-shadow:0 0 20px rgba(168,85,247,.2);}
+.submit-btn:hover{background:rgba(168,85,247,.14);box-shadow:0 0 40px rgba(168,85,247,.5);}
+.form-note{font-size:11px;color:var(--text3);margin-top:12px;line-height:1.6;}
+
+/* SIDEBAR INFO */
+.contact-sidebar{display:flex;flex-direction:column;gap:16px;}
+.info-card{border:1px solid var(--border);background:rgba(8,0,16,.85);padding:24px;transition:all .3s;animation:border-glow 6s ease-in-out infinite;}
+.info-card:hover{border-color:rgba(168,85,247,.5);background:rgba(20,0,40,.9);}
+.info-icon{font-size:24px;margin-bottom:10px;}
+.info-title{font-family:var(--ft);font-size:11px;letter-spacing:.2em;color:var(--p300);margin-bottom:6px;}
+.info-body{font-size:13px;color:var(--text2);line-height:1.7;}
+.info-link{color:var(--p300);text-decoration:none;font-family:var(--ft);font-size:11px;letter-spacing:.1em;transition:color .2s;}
+.info-link:hover{color:#fff;}
+
+/* SOCIALS */
+.socials-section{position:relative;padding:80px 40px;background:linear-gradient(to bottom,#000,#04000A);overflow:hidden;text-align:center;}
+.socials-grid{max-width:760px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;}
+.social-card{border:1px solid var(--border);background:rgba(8,0,16,.85);padding:28px 16px;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;animation:border-glow 5s ease-in-out infinite;display:block;}
+.social-card:hover{border-color:rgba(168,85,247,.55);background:rgba(20,0,40,.9);transform:translateY(-4px);}
+.social-icon{font-size:28px;margin-bottom:10px;display:block;}
+.social-name{font-family:var(--ft);font-size:11px;letter-spacing:.2em;color:var(--text);margin-bottom:6px;}
+.social-handle{font-size:11px;color:var(--text3);}
+
+/* NEWSLETTER */
+.newsletter{position:relative;padding:80px 40px;text-align:center;background:#000;overflow:hidden;}
+.nl-inner{max-width:560px;margin:0 auto;position:relative;z-index:2;}
+.nl-inner h2{font-family:var(--fd);font-size:clamp(22px,4vw,40px);color:#fff;margin-bottom:14px;text-shadow:0 0 20px rgba(168,85,247,.5);}
+.nl-inner p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:32px;}
+.nl-form{display:flex;gap:10px;max-width:440px;margin:0 auto;}
+.nl-input{flex:1;background:rgba(10,0,20,.85);border:1px solid var(--border);color:var(--text);font-family:var(--fb);font-size:13px;padding:14px 16px;outline:none;transition:border-color .2s;}
+.nl-input:focus{border-color:var(--p400);}
+.nl-input::placeholder{color:var(--text3);}
+
+/* SUCCESS STATE */
+.success-msg{display:none;background:rgba(107,203,119,.08);border:1px solid rgba(107,203,119,.3);padding:16px;text-align:center;font-family:var(--ft);font-size:12px;letter-spacing:.15em;color:#6BCB77;margin-top:16px;}
+
+@media(max-width:768px){
+  .contact-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .socials-grid{grid-template-columns:repeat(2,1fr);}
+  .nl-form{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">XOMYSTICXO</div>
+  <div class="nav-links">
+    <a href="index.html">HOME</a>
+    <a href="music.html">MUSIC</a>
+    <a href="fashion.html">FASHION</a>
+    <a href="world.html">WORLD</a>
+    <a href="contact.html" class="active">CONTACT</a>
+  </div>
+  <div class="nav-icons">
+    <a href="#">IG</a><a href="#">YT</a><a href="#">SC</a><a href="#">✉</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="nebula"><div class="neb-l"></div><div class="neb-r"></div><div class="neb-c"></div></div>
+  <div class="stars" id="starsHero"></div>
+  <div class="page-hero-fade"></div>
+  <h1 class="page-title">CONNECT</h1>
+  <p class="page-sub">LET'S BUILD SOMETHING REAL ✦</p>
+</div>
+
+<!-- CONTACT FORM + SIDEBAR -->
+<section class="contact-section">
+  <div class="stars" id="starsContact"></div>
+  <div class="contact-grid">
+
+    <!-- FORM -->
+    <div class="form-wrap">
+      <p class="section-tag" style="text-align:left;">✦ GET IN TOUCH</p>
+      <h2>Say something real.</h2>
+      <p class="sub">Collaborations, features, business, fashion inquiries, or just reaching out — send it through. Everything gets read.</p>
+
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="Name" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="email@example.com" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Inquiry Type</label>
+          <select class="form-select">
+            <option value="">Select a reason...</option>
+            <option>Music Collaboration</option>
+            <option>Fashion / Clothing</option>
+            <option>Business Inquiry</option>
+            <option>Press / Media</option>
+            <option>Fan Message</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input type="text" class="form-input" placeholder="What's this about?"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Say what you need to say..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">SEND MESSAGE ✦</button>
+        <p class="form-note">Replace this form's action with your preferred form handler (Formspree, Netlify Forms, etc.) to make it live.</p>
+      </form>
+      <div class="success-msg" id="successMsg">✦ MESSAGE SENT — I'LL GET BACK TO YOU ✦</div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="contact-sidebar">
+      <div class="info-card">
+        <div class="info-icon">✉</div>
+        <div class="info-title">EMAIL</div>
+        <div class="info-body">For direct inquiries and business.<br/>
+        <!-- Replace with your actual email -->
+        <a href="mailto:hello@xomysticxo.com" class="info-link">hello@xomysticxo.com</a></div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🎵</div>
+        <div class="info-title">MUSIC INQUIRIES</div>
+        <div class="info-body">Collabs, features, mixing, licensing. Send a message with your project details and we'll go from there.</div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🖤</div>
+        <div class="info-title">FASHION INQUIRIES</div>
+        <div class="info-body">Wholesale, custom pieces, or early access to drops. Reach out through the form or socials.</div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <div class="info-title">BASED IN</div>
+        <div class="info-body">South Africa 🇿🇦<br/>Building globally from local.</div>
+      </div>
+      <div class="info-card" style="border-color:rgba(168,85,247,.3);background:rgba(20,0,40,.7);">
+        <div class="info-title" style="color:var(--text2);">RESPONSE TIME</div>
+        <div class="info-body">All messages are read. Responses within 48–72 hours. Real ones get replied to first.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOCIALS -->
+<section class="socials-section">
+  <div class="stars" id="starsSocials"></div>
+  <div style="position:relative;z-index:2;">
+    <p class="section-tag">✦ FOLLOW THE JOURNEY ✦</p>
+    <p style="font-size:14px;color:var(--text2);max-width:480px;margin:0 auto;">Every platform tells a different part of the story. Follow all of them to get the full picture.</p>
+  </div>
+  <div class="socials-grid">
+    <!-- Replace href="#" with your actual profile URLs -->
+    <a href="#" class="social-card">
+      <span class="social-icon">📸</span>
+      <div class="social-name">INSTAGRAM</div>
+      <div class="social-handle">@xomysticxo</div>
+    </a>
+    <a href="#" class="social-card">
+      <span class="social-icon">▶</span>
+      <div class="social-name">YOUTUBE</div>
+      <div class="social-handle">XOMYSTICXO</div>
+    </a>
+    <a href="#" class="social-card">
+      <span class="social-icon">🎵</span>
+      <div class="social-name">TIKTOK</div>
+      <div class="social-handle">@xomysticxo</div>
+    </a>
+    <a href="#" class="social-card">
+      <span class="social-icon">☁</span>
+      <div class="social-name">SOUNDCLOUD</div>
+      <div class="social-handle">XOMYSTICXO</div>
+    </a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="nebula"><div class="neb-l"></div><div class="neb-r"></div></div>
+  <div class="stars" id="starsNL"></div>
+  <div class="nl-inner">
+    <p class="section-tag">✦ THE SIGNAL ✦</p>
+    <h2>Stay in the loop.</h2>
+    <p>New music. Fashion drops. World updates. No spam. Just the signal when something real happens.</p>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="YOUR EMAIL ADDRESS"/>
+      <button class="btn" onclick="handleNewsletter(this)">SUBSCRIBE ✦</button>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="stars" id="starsFooter"></div>
+  <p class="footer-text">© 2026 XOMYSTICXO. ALL RIGHTS RESERVED.</p>
+  <div class="footer-star">✦</div>
+  <p class="footer-text">ONE TAKE, ONE TRUTH.</p>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+makeStars('starsHero',100);makeStars('starsContact',60);makeStars('starsSocials',60);makeStars('starsNL',40);makeStars('starsFooter',20);
+
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('successMsg').style.display='block';
+}
+
+function handleNewsletter(btn){
+  btn.textContent='SUBSCRIBED ✦';
+  btn.style.background='rgba(168,85,247,.2)';
+  btn.style.cursor='default';
+}
+</script>
+</body>
+</html>

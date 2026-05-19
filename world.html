@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>XOMYSTICXO — World</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* STORY */
+.story{position:relative;padding:80px 40px;background:#000;overflow:hidden;}
+.story-grid{max-width:960px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.story-text h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);color:#fff;margin-bottom:20px;text-shadow:0 0 20px rgba(168,85,247,.4);line-height:1.2;}
+.story-text p{font-size:15px;color:var(--text2);line-height:2.1;margin-bottom:20px;}
+.story-text p:last-of-type{margin-bottom:32px;}
+.story-visual{position:relative;}
+.story-card{border:1px solid var(--border);background:radial-gradient(ellipse at 50% 30%,rgba(88,28,135,.7) 0%,rgba(4,0,10,.95) 70%);padding:32px;position:relative;overflow:hidden;animation:border-glow 5s ease-in-out infinite;}
+.story-card-title{font-family:var(--fd);font-size:22px;color:#fff;margin-bottom:12px;text-shadow:0 0 15px rgba(168,85,247,.5);}
+.story-card-sub{font-size:12px;color:var(--text3);font-family:var(--ft);letter-spacing:.15em;margin-bottom:20px;}
+.story-card-body{font-size:14px;color:var(--text2);line-height:1.9;}
+.timeline{margin-top:32px;display:flex;flex-direction:column;gap:0;}
+.timeline-item{display:flex;gap:20px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);}
+.timeline-item:last-child{border-bottom:none;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--p400);flex-shrink:0;margin-top:5px;box-shadow:0 0 10px rgba(168,85,247,.5);}
+.tl-year{font-family:var(--ft);font-size:11px;color:var(--p300);letter-spacing:.1em;width:40px;flex-shrink:0;margin-top:3px;}
+.tl-text{font-size:13px;color:var(--text2);line-height:1.7;}
+
+/* PILLARS */
+.pillars{position:relative;padding:80px 40px;background:linear-gradient(to bottom,#000,#04000A);overflow:hidden;}
+.pillars-grid{max-width:960px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.pillar-card{padding:32px 24px;position:relative;overflow:hidden;}
+.pillar-num{font-family:var(--fd);font-size:48px;color:rgba(168,85,247,.12);position:absolute;top:16px;right:16px;line-height:1;}
+.pillar-icon{font-size:28px;margin-bottom:14px;}
+.pillar-title{font-family:var(--ft);font-size:13px;letter-spacing:.2em;color:var(--text);margin-bottom:12px;}
+.pillar-desc{font-size:13px;color:var(--text3);line-height:1.8;}
+
+/* TRAITS */
+.traits-section{position:relative;padding:80px 40px;background:#000;overflow:hidden;}
+.traits-grid{max-width:960px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.trait-card{padding:24px 14px;text-align:center;}
+.trait-icon{font-size:24px;margin-bottom:10px;animation:crescent-glow 4s ease-in-out infinite;}
+.trait-name{font-family:var(--ft);font-size:11px;letter-spacing:.2em;color:var(--text);margin-bottom:6px;}
+.trait-desc{font-size:11px;color:var(--text3);line-height:1.6;}
+
+/* LEGACY */
+.legacy{position:relative;padding:80px 40px;text-align:center;background:linear-gradient(to bottom,#04000A,#000);overflow:hidden;}
+.legacy-inner{max-width:700px;margin:0 auto;position:relative;z-index:2;}
+.legacy h2{font-family:var(--fd);font-size:clamp(24px,4vw,46px);color:#fff;margin-bottom:18px;animation:glow-pulse 4s ease-in-out infinite;text-shadow:0 0 30px rgba(168,85,247,.5);}
+.legacy p{font-size:15px;color:var(--text2);line-height:2;margin-bottom:32px;}
+.legacy-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
+.ls-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;animation:border-glow 5s ease-in-out infinite;}
+.ls-num{font-family:var(--fd);font-size:32px;color:var(--p300);margin-bottom:4px;}
+.ls-label{font-size:11px;color:var(--text3);font-family:var(--ft);letter-spacing:.15em;}
+
+@media(max-width:768px){
+  .story-grid{grid-template-columns:1fr;}
+  .pillars-grid{grid-template-columns:1fr;}
+  .traits-grid{grid-template-columns:repeat(2,1fr);}
+  .legacy-stats{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">XOMYSTICXO</div>
+  <div class="nav-links">
+    <a href="index.html">HOME</a>
+    <a href="music.html">MUSIC</a>
+    <a href="fashion.html">FASHION</a>
+    <a href="world.html" class="active">WORLD</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+  <div class="nav-icons">
+    <a href="#">IG</a><a href="#">YT</a><a href="#">SC</a><a href="#">✉</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="nebula"><div class="neb-l"></div><div class="neb-r"></div><div class="neb-c"></div></div>
+  <div class="stars" id="starsHero"></div>
+  <div class="page-hero-fade"></div>
+  <h1 class="page-title">THE WORLD</h1>
+  <p class="page-sub">MORE THAN A BRAND — A UNIVERSE ✦</p>
+</div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="stars" id="starsStory"></div>
+  <div class="story-grid">
+    <div class="story-text">
+      <p class="section-tag" style="text-align:left;">✦ THE STORY</p>
+      <h2>A future built in public.</h2>
+      <p>XOMYSTICXO is a South African creator building music, fashion, and long-term businesses from the ground up. Every post, design, beat, and idea documents the process of becoming something bigger than the environment it started in.</p>
+      <p>This isn't a highlight reel. It's the climb — raw, real, and documented in real time. The struggle is part of the brand. The process is the content.</p>
+      <p>Everything is connected. The music feeds the fashion. The fashion feeds the world. The world feeds the legacy.</p>
+      <a href="contact.html" class="btn btn-ghost">JOIN THE JOURNEY ✦</a>
+    </div>
+    <div class="story-visual">
+      <div class="story-card">
+        <div class="stars" id="starsCard"></div>
+        <div style="position:relative;z-index:2;">
+          <div class="story-card-title">XoMYSTicXo</div>
+          <div class="story-card-sub">SOUTH AFRICA · BUILDING FROM NOTHING</div>
+          <div class="story-card-body">Artist. Designer. Creator. Entrepreneur. Not in that order. Not by that definition. Just building.</div>
+        </div>
+      </div>
+      <div class="timeline" style="margin-top:24px;">
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">NOW</div>
+          <div class="tl-text">Documenting the build. Music, fashion, and world in motion.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot" style="background:var(--p300);"></div>
+          <div class="tl-year">NEXT</div>
+          <div class="tl-text">First fashion drop. First full project release. First real moment.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot" style="background:rgba(168,85,247,.3);"></div>
+          <div class="tl-year">THEN</div>
+          <div class="tl-text">Generational wealth through creative independence. That's the only goal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="stars" id="starsPillars"></div>
+  <div style="max-width:960px;margin:0 auto;position:relative;z-index:2;">
+    <p class="section-tag" style="text-align:center;">✦ THE THREE PILLARS ✦</p>
+    <div class="pillars-grid">
+      <div class="card pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-icon">🎵</div>
+        <div class="pillar-title">MUSIC</div>
+        <div class="pillar-desc">Emotional underground energy inspired by isolation, ambition, anime aesthetics, and futuristic soundscapes. One take. One truth. Always.</div>
+      </div>
+      <div class="card pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-icon">🖤</div>
+        <div class="pillar-title">FASHION</div>
+        <div class="pillar-desc">Streetwear concepts blending dystopian visuals, music culture, and identity-driven storytelling. Built different. For the different.</div>
+      </div>
+      <div class="card pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-icon">🌌</div>
+        <div class="pillar-title">LEGACY</div>
+        <div class="pillar-desc">Generational wealth through creative independence and interconnected businesses. The long game. The only game that matters.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAITS -->
+<section class="traits-section">
+  <div class="stars" id="starsTraits"></div>
+  <div style="max-width:960px;margin:0 auto;position:relative;z-index:2;">
+    <p class="section-tag" style="text-align:center;">✦ WHO I AM ✦</p>
+    <div class="traits-grid">
+      <div class="card trait-card"><div class="trait-icon">✦</div><div class="trait-name">VISIONARY</div><div class="trait-desc">Sees the end before the beginning exists</div></div>
+      <div class="card trait-card"><div class="trait-icon">☽</div><div class="trait-name">DREAMER</div><div class="trait-desc">Dreams big enough to scare people</div></div>
+      <div class="card trait-card"><div class="trait-icon">◎</div><div class="trait-name">CREATOR</div><div class="trait-desc">Builds from nothing. Always has.</div></div>
+      <div class="card trait-card"><div class="trait-icon">⚡</div><div class="trait-name">DIFFERENT</div><div class="trait-desc">Never fit the mould. Stopped trying.</div></div>
+      <div class="card trait-card"><div class="trait-icon">♡</div><div class="trait-name">FEARLESS</div><div class="trait-desc">Does it afraid. Every single time.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGACY -->
+<section class="legacy">
+  <div class="nebula"><div class="neb-l"></div><div class="neb-r"></div></div>
+  <div class="stars" id="starsLegacy"></div>
+  <div class="legacy-inner">
+    <p class="section-tag">✦ THE MISSION ✦</p>
+    <h2>Inspire the misfits.</h2>
+    <p>Every piece of content, every drop, every song is proof that you can build something real from nothing. That's the point. That's always been the point.</p>
+    <div class="legacy-stats">
+      <div class="ls-card"><div class="ls-num">ONE</div><div class="ls-label">TAKE. ONE TRUTH.</div></div>
+      <div class="ls-card"><div class="ls-num">ZA</div><div class="ls-label">BUILT IN SOUTH AFRICA</div></div>
+      <div class="ls-card"><div class="ls-num">∞</div><div class="ls-label">THE LONG GAME</div></div>
+    </div>
+    <a href="contact.html" class="btn">BE PART OF IT ✦</a>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="stars" id="starsFooter"></div>
+  <p class="footer-text">© 2026 XOMYSTICXO. ALL RIGHTS RESERVED.</p>
+  <div class="footer-star">✦</div>
+  <p class="footer-text">ONE TAKE, ONE TRUTH.</p>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+makeStars('starsHero',100);makeStars('starsStory',60);makeStars('starsCard',20);
+makeStars('starsPillars',55);makeStars('starsTraits',50);makeStars('starsLegacy',60);makeStars('starsFooter',20);
+</script>
+</body>
+</html>

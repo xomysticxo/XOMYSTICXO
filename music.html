@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>XOMYSTICXO — Music</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* TRACK CARDS */
+.tracks-section{position:relative;padding:80px 40px;background:#000;overflow:hidden;}
+.tracks{display:flex;flex-direction:column;gap:12px;margin-bottom:60px;}
+.track-card{background:rgba(10,0,20,.85);border:1px solid var(--border);padding:16px 18px;display:flex;align-items:center;gap:16px;transition:all .3s;animation:border-glow 5s ease-in-out infinite;cursor:pointer;}
+.track-card:hover{border-color:rgba(168,85,247,.6);background:rgba(20,0,40,.9);}
+.track-num{font-family:var(--ft);font-size:11px;color:var(--text3);width:24px;flex-shrink:0;letter-spacing:.1em;}
+.track-thumb{width:58px;height:58px;flex-shrink:0;background:radial-gradient(circle at 40% 40%,rgba(126,34,206,.8),rgba(4,0,10,.9));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--p400);box-shadow:0 0 15px rgba(168,85,247,.3);}
+.track-info{flex:1;min-width:0;}
+.track-title{font-family:var(--ft);font-size:13px;letter-spacing:.12em;color:#fff;margin-bottom:4px;}
+.track-artist{font-size:11px;color:var(--text3);letter-spacing:.1em;margin-bottom:8px;}
+.waveform{display:flex;gap:2px;align-items:center;height:24px;}
+.wv{width:3px;background:var(--p400);border-radius:2px;min-height:3px;animation:waveform var(--wd,.8s) var(--wdl,0s) ease-in-out infinite;}
+.track-duration{font-family:var(--ft);font-size:11px;color:var(--text3);letter-spacing:.08em;flex-shrink:0;margin-right:12px;}
+.play-btn{width:38px;height:38px;border-radius:50%;background:transparent;border:1px solid var(--p400);color:var(--p300);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;box-shadow:0 0 10px rgba(168,85,247,.3);transition:all .2s;}
+.play-btn:hover{background:rgba(168,85,247,.2);box-shadow:0 0 22px rgba(168,85,247,.6);}
+
+/* EMBED INSTRUCTIONS */
+.how-to{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:rgba(10,0,20,.6);padding:28px;font-size:12px;color:var(--text3);line-height:2;margin-bottom:60px;}
+.how-to-title{font-family:var(--ft);font-size:10px;letter-spacing:.2em;color:var(--p300);margin-bottom:12px;}
+.how-to-right{border-left:1px solid var(--border);padding-left:24px;}
+.code-block{font-family:monospace;font-size:11px;color:rgba(196,181,212,.45);line-height:1.9;}
+
+/* GENRE TAGS */
+.genre-section{position:relative;padding:60px 40px;background:linear-gradient(to bottom,#000,#04000A);overflow:hidden;}
+.genre-grid{max-width:960px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.genre-card{padding:28px 20px;text-align:center;}
+.genre-icon{font-size:28px;margin-bottom:12px;}
+.genre-name{font-family:var(--ft);font-size:12px;letter-spacing:.2em;color:var(--text);margin-bottom:8px;}
+.genre-desc{font-size:12px;color:var(--text3);line-height:1.7;}
+
+@media(max-width:768px){
+  .how-to{grid-template-columns:1fr;}
+  .how-to-right{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:16px;margin-top:8px;}
+  .genre-grid{grid-template-columns:1fr;}
+  .track-duration{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">XOMYSTICXO</div>
+  <div class="nav-links">
+    <a href="index.html">HOME</a>
+    <a href="music.html" class="active">MUSIC</a>
+    <a href="fashion.html">FASHION</a>
+    <a href="world.html">WORLD</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+  <div class="nav-icons">
+    <a href="#">IG</a><a href="#">YT</a><a href="#">SC</a><a href="#">✉</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="nebula"><div class="neb-l"></div><div class="neb-r"></div><div class="neb-c"></div></div>
+  <div class="stars" id="starsHero"></div>
+  <div class="page-hero-fade"></div>
+  <h1 class="page-title">MUSIC</h1>
+  <p class="page-sub">SOUND FROM MY WORLD ✦</p>
+</div>
+
+<!-- TRACKS -->
+<section class="tracks-section">
+  <div class="stars" id="starsTracks"></div>
+  <div class="inner">
+    <p class="section-tag" style="text-align:left;">✦ FEATURED TRACKS</p>
+    <div class="tracks">
+
+      <!-- ─── TRACK 1 ───
+           TO ADD MUSIC: Replace the <div class="waveform" id="wv1"></div>
+           with your embed iframe:
+           <iframe src="YOUR_SPOTIFY_OR_SOUNDCLOUD_EMBED" width="100%" height="80"
+           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      ─── -->
+      <div class="track-card">
+        <div class="track-num">01</div>
+        <div class="track-thumb">✦</div>
+        <div class="track-info">
+          <div class="track-title">LOST IN THE STARS ✦</div>
+          <div class="track-artist">XOMYSTICXO</div>
+          <div class="waveform" id="wv1"></div>
+        </div>
+        <div class="track-duration">3:42</div>
+        <button class="play-btn" onclick="togglePlay(this)">▶</button>
+      </div>
+
+      <div class="track-card">
+        <div class="track-num">02</div>
+        <div class="track-thumb">✦</div>
+        <div class="track-info">
+          <div class="track-title">MYSTIC NIGHTS ✦</div>
+          <div class="track-artist">XOMYSTICXO</div>
+          <div class="waveform" id="wv2"></div>
+        </div>
+        <div class="track-duration">4:10</div>
+        <button class="play-btn" onclick="togglePlay(this)">▶</button>
+      </div>
+
+      <div class="track-card">
+        <div class="track-num">03</div>
+        <div class="track-thumb">✦</div>
+        <div class="track-info">
+          <div class="track-title">BROKEN REALITY ✦</div>
+          <div class="track-artist">XOMYSTICXO</div>
+          <div class="waveform" id="wv3"></div>
+        </div>
+        <div class="track-duration">3:58</div>
+        <button class="play-btn" onclick="togglePlay(this)">▶</button>
+      </div>
+
+      <div class="track-card">
+        <div class="track-num">04</div>
+        <div class="track-thumb">✦</div>
+        <div class="track-info">
+          <div class="track-title">VOID WALKER ✦</div>
+          <div class="track-artist">XOMYSTICXO</div>
+          <div class="waveform" id="wv4"></div>
+        </div>
+        <div class="track-duration">5:02</div>
+        <button class="play-btn" onclick="togglePlay(this)">▶</button>
+      </div>
+
+      <div class="track-card">
+        <div class="track-num">05</div>
+        <div class="track-thumb">✦</div>
+        <div class="track-info">
+          <div class="track-title">SILENT FREQUENCY ✦</div>
+          <div class="track-artist">XOMYSTICXO</div>
+          <div class="waveform" id="wv5"></div>
+        </div>
+        <div class="track-duration">3:27</div>
+        <button class="play-btn" onclick="togglePlay(this)">▶</button>
+      </div>
+
+    </div>
+
+    <!-- HOW TO ADD MUSIC -->
+    <div class="how-to">
+      <div>
+        <div class="how-to-title">HOW TO ADD YOUR MUSIC</div>
+        <div>1. Upload your song to Spotify, SoundCloud, or YouTube</div>
+        <div>2. Copy the embed link from the share menu</div>
+        <div>3. Open music.html and find the track you want to update</div>
+        <div>4. Replace the waveform div with your iframe embed</div>
+        <div>5. Save the file — your player will appear automatically</div>
+      </div>
+      <div class="how-to-right">
+        <div class="how-to-title">EXAMPLE STRUCTURE:</div>
+        <div class="code-block">
+          &lt;!-- Replace waveform div with: --&gt;<br/>
+          &lt;iframe<br/>
+          &nbsp;src="YOUR_EMBED_LINK_HERE"<br/>
+          &nbsp;width="100%" height="80"<br/>
+          &nbsp;frameborder="0"<br/>
+          &nbsp;allow="autoplay; encrypted-media"<br/>
+          &nbsp;allowfullscreen&gt;<br/>
+          &lt;/iframe&gt;
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOUND IDENTITY -->
+<section class="genre-section">
+  <div class="stars" id="starsGenre"></div>
+  <div class="genre-grid">
+    <div class="card genre-card">
+      <div class="genre-icon">🌑</div>
+      <div class="genre-name">EMOTIONAL UNDERGROUND</div>
+      <div class="genre-desc">Raw feeling over polished sound. Every track is a page from the process.</div>
+    </div>
+    <div class="card genre-card">
+      <div class="genre-icon">🌌</div>
+      <div class="genre-name">FUTURISTIC SOUNDSCAPES</div>
+      <div class="genre-desc">Anime aesthetics meet isolation and ambition. Something you've never heard.</div>
+    </div>
+    <div class="card genre-card">
+      <div class="genre-icon">⚡</div>
+      <div class="genre-name">ONE TAKE ENERGY</div>
+      <div class="genre-desc">No fake perfection. The imperfection is the point. It's real or it's nothing.</div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="stars" id="starsFooter"></div>
+  <p class="footer-text">© 2026 XOMYSTICXO. ALL RIGHTS RESERVED.</p>
+  <div class="footer-star">✦</div>
+  <p class="footer-text">ONE TAKE, ONE TRUTH.</p>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+makeStars('starsHero',100);
+makeStars('starsTracks',60);
+makeStars('starsGenre',50);
+makeStars('starsFooter',20);
+makeWaveform('wv1');makeWaveform('wv2');makeWaveform('wv3');
+makeWaveform('wv4');makeWaveform('wv5');
+</script>
+</body>
+</html>
